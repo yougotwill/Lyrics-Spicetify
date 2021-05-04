@@ -75,6 +75,7 @@
         h1.style.overflow = 'hidden';
         h1.style.whiteSpace = 'nowrap';
         h1.style.textOverflow = 'ellipsis';
+        h1.style.paddingBottom = '0.34em';
         // Music album / artist
         const h2 = document.createElement("h2");
         h2.id = "LyricsContainerMusicArtistAlbum"
@@ -83,6 +84,7 @@
         h2.style.overflow = 'hidden';
         h2.style.whiteSpace = 'nowrap';
         h2.style.textOverflow = 'ellipsis';
+        h2.style.paddingBottom = '0.34em';
         // Muisc Lyrics
         const p = document.createElement("p");
         p.id = "LyricsContainerMusicLyrics"
