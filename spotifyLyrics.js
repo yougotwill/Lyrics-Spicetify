@@ -71,10 +71,18 @@
         const h1 = document.createElement("h1");
         h1.id = "LyricsContainerMusicTitle"
         h1.innerHTML = "Title";
+        h1.style.width = '100%';
+        h1.style.overflow = 'hidden';
+        h1.style.whiteSpace = 'nowrap';
+        h1.style.textOverflow = 'ellipsis';
         // Music album / artist
         const h2 = document.createElement("h2");
         h2.id = "LyricsContainerMusicArtistAlbum"
         h2.innerHTML = "Artist";
+        h2.style.width = '100%';
+        h2.style.overflow = 'hidden';
+        h2.style.whiteSpace = 'nowrap';
+        h2.style.textOverflow = 'ellipsis';
         // Muisc Lyrics
         const p = document.createElement("p");
         p.id = "LyricsContainerMusicLyrics"
@@ -125,11 +133,14 @@
                     if (responseObject.lyrics.length > 0) {
                         // Display the lyrics
                         document.getElementById("LyricsContainerMusicLyrics").innerHTML = responseObject.lyrics
+                        document.getElementById("lyricsButton").style.color = getComputedStyle(document.body).getPropertyValue('--modspotify_sidebar_indicator_and_hover_button_bg');
                     } else {
-                        document.getElementById("LyricsContainerMusicLyrics").innerHTML = "No lyrics found."
+                        document.getElementById("LyricsContainerMusicLyrics").innerHTML = "No lyrics found.";
+                        document.getElementById("lyricsButton").style.color = 'unset';
                     }
                 } else {
-                    document.getElementById("LyricsContainerMusicLyrics").innerHTML = "Request error."
+                    document.getElementById("LyricsContainerMusicLyrics").innerHTML = "Request error.";
+                    document.getElementById("lyricsButton").style.color = 'unset';
                 }
             });
         });
